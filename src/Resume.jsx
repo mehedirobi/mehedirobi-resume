@@ -82,7 +82,7 @@ const Resume = () => {
             <div className="flex flex-col gap-1">
               <h3 className="font-medium">Backend</h3>
               <span>Node.js, Express.js</span>
-              <span>MongoDB (Basic)</span>
+              <span>MongoDB</span>
               <span>MERN Stack</span>
               <span>Next.js (Basic)</span>
             </div>
