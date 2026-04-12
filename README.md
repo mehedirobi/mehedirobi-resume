@@ -27,9 +27,9 @@ This project is designed to present professional information in a structured, vi
 
 ---
 
-## 🔗 Live Demo
+## 🔗 Live Link
 
-👉 https://your-live-link-here.com
+https://mehedirobi-resume.netlify.app/
 
 ---
 
