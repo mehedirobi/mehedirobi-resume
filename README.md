@@ -27,4 +27,13 @@ This project is designed to present professional information in a structured, vi
 
 ---
 
-## 📂 Project Structure
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+npm run dev
