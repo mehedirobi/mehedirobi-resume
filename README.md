@@ -27,6 +27,9 @@ This project is designed to present professional information in a structured, vi
 
 ---
 
+## 🔗 Live Demo
+
+👉 https://your-live-link-here.com
 
 ---
 
@@ -36,4 +39,3 @@ This project is designed to present professional information in a structured, vi
 
 ```bash
 npm install
-npm run dev
