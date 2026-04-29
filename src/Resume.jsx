@@ -4,179 +4,192 @@ const Resume = () => {
   const projects = [
     {
       name: "UrbanFix",
-      tech: "React • Tailwind CSS • Firebase",
-      description:
-        "Developed a civic issue management platform with role-based access, real-time updates, and streamlined workflows for reporting and resolving urban infrastructure issues.",
+      tech: "React • Tailwind • Firebase",
+      desc: "Civic issue reporting platform with real-time updates and role-based workflow system.",
       live: "https://urban-fix-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/urban-fix-project",
     },
     {
       name: "ToyVerse",
-      tech: "React • Node.js • Express.js",
-      description:
-        "Built a scalable toy marketplace with authentication, dynamic product management, dashboards, and user-focused engagement features.",
+      tech: "React • Node • Express",
+      desc: "Marketplace platform with authentication, dashboard and product management system.",
       live: "https://toyverse-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/toyverse-project",
     },
     {
       name: "PawMart",
       tech: "React • Firebase • MongoDB",
-      description:
-        "Created a pet adoption and e-commerce platform integrating marketplace workflows, user-generated listings, and secure transactions.",
+      desc: "Pet adoption and e-commerce system with secure listings and user workflows.",
       live: "https://pawmart-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/pawmart-project",
     },
   ];
 
   return (
-    <div className="bg-slate-100 min-h-screen flex justify-center px-4 py-8 print:bg-white print:p-0">
-      <div className="w-full max-w-[850px] bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-10 text-slate-800 print:shadow-none print:border-none print:rounded-none">
+    <div className="bg-slate-100 flex justify-center px-4 py-6 print:bg-white">
+      <div className="w-full max-w-[800px] bg-white p-7 text-slate-800 print:p-0">
 
-        {/* Header */}
-        <header className="pb-6 border-b border-slate-200">
-          <div className="flex flex-col md:flex-row md:justify-between gap-6">
+        {/* ================= HEADER ================= */}
+        <header className="border-b pb-4">
+          <div className="flex justify-between items-start gap-6">
+
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900">
+              <h1 className="text-3xl font-bold text-slate-900">
                 Mehedi Robi
               </h1>
-              <p className="mt-2 text-sm font-medium text-slate-600">
+              <p className="text-sm text-slate-600 mt-1">
                 Frontend Developer | React.js | Modern Web Applications
               </p>
             </div>
 
-            <div className="text-sm text-slate-600 md:text-right space-y-1">
+            <div className="text-[12px] text-right text-slate-600 space-y-1">
               <p>mehedirobidev@gmail.com</p>
               <p>+8801336458100</p>
               <p>Dhaka, Bangladesh</p>
-              <div className="flex md:justify-end gap-3 pt-1 text-blue-600 font-medium">
-                <a href="https://github.com/mehedirobi" target="_blank" rel="noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/mehedirobii/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a href="https://mehedi-robi-portfolio.netlify.app/" target="_blank" rel="noreferrer">Portfolio</a>
+
+              <div className="flex gap-3 justify-end text-blue-600 text-sm mt-1">
+                <a href="https://github.com/mehedirobi">GitHub</a>
+                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="https://mehedi-robi-portfolio.netlify.app/">Portfolio</a>
               </div>
             </div>
+
           </div>
         </header>
 
-        {/* Summary */}
-        <section className="mt-8">
-          <h2 className="text-sm font-bold uppercase tracking-[2px] text-slate-900 mb-3">
-            Professional Summary
+        {/* ================= SUMMARY ================= */}
+        <section className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
+            Summary
           </h2>
-          <p className="text-sm leading-7 text-slate-700">
-            Frontend-focused developer with hands-on experience building scalable,
-            responsive, and production-ready web applications using React.js,
-            JavaScript (ES6+), Tailwind CSS, Node.js, and Firebase. Strong in
-            reusable component architecture, UI/UX alignment, clean code practices,
-            and performance optimization for modern digital products.
+
+          <p className="text-sm leading-6 text-slate-700">
+            Frontend developer focused on building scalable, responsive and
+            production-ready web applications using React, Tailwind CSS and
+            modern JavaScript. Strong focus on UI/UX, reusable components and
+            performance optimization.
           </p>
         </section>
 
-        {/* Skills */}
-        <section className="mt-8">
-          <h2 className="text-sm font-bold uppercase tracking-[2px] text-slate-900 mb-4">
-            Technical Skills
+        {/* ================= SKILLS ================= */}
+        <section className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-3">
+            Skills
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6 text-sm">
+          <div className="grid grid-cols-3 gap-6 text-sm">
+
             <div>
-              <h3 className="font-semibold mb-2">Frontend</h3>
-              <p className="text-slate-700 leading-7">
-                React.js, JavaScript, HTML5, CSS3, Tailwind CSS, Responsive Design
+              <p className="font-semibold text-slate-900 mb-1">Frontend</p>
+              <p className="text-slate-700 leading-5">
+                React.js, JavaScript, Tailwind CSS, HTML5, CSS3
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">Backend</h3>
-              <p className="text-slate-700 leading-7">
+              <p className="font-semibold text-slate-900 mb-1">Backend</p>
+              <p className="text-slate-700 leading-5">
                 Node.js, Express.js, MongoDB, Firebase, REST APIs
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-2">Tools</h3>
-              <p className="text-slate-700 leading-7">
-                Git, GitHub, Vite, VS Code, Performance Optimization
+              <p className="font-semibold text-slate-900 mb-1">Tools</p>
+              <p className="text-slate-700 leading-5">
+                Git, GitHub, Vite, VS Code, Postman
               </p>
             </div>
+
           </div>
         </section>
 
-        {/* Projects */}
-        <section className="mt-8">
-          <h2 className="text-sm font-bold uppercase tracking-[2px] text-slate-900 mb-4">
-            Featured Projects
+        {/* ================= PROJECTS ================= */}
+        <section className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-3">
+            Projects
           </h2>
 
-          <div className="space-y-5">
-            {projects.map((project, index) => (
-              <div key={index} className="border-l-2 border-slate-200 pl-4">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-                  <h3 className="text-base font-semibold text-slate-900">
-                    {project.name}
+          <div className="space-y-3">
+            {projects.map((p, i) => (
+              <div key={i} className="border-l-2 border-slate-200 pl-3">
+
+                <div className="flex justify-between items-center">
+                  <h3 className="text-sm font-semibold text-slate-900">
+                    {p.name}
                   </h3>
-                  <span className="text-xs text-slate-500">{project.tech}</span>
+                  <span className="text-[11px] text-slate-500">
+                    {p.tech}
+                  </span>
                 </div>
 
-                <p className="mt-2 text-sm text-slate-700 leading-6">
-                  {project.description}
+                <p className="text-sm text-slate-700 mt-1 leading-5">
+                  {p.desc}
                 </p>
 
-                <div className="mt-2 flex gap-4 text-sm text-blue-600 font-medium">
-                  <a href={project.live} target="_blank" rel="noreferrer">
-                    Live Demo
-                  </a>
-                  <a href={project.github} target="_blank" rel="noreferrer">
-                    GitHub
-                  </a>
+                <div className="text-[12px] text-blue-600 flex gap-4 mt-1">
+                  <a href={p.live}>Live</a>
+                  <a href={p.github}>GitHub</a>
                 </div>
+
               </div>
             ))}
           </div>
         </section>
 
-        {/* Certification */}
-        <section className="mt-8">
-          <h2 className="text-sm font-bold uppercase tracking-[2px] text-slate-900 mb-4">
-            Certifications
+        {/* ================= EXPERIENCE ================= */}
+        <section className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
+            Experience / Practical Work
           </h2>
 
-          <div className="border-l-2 border-slate-200 pl-4">
-            <h3 className="text-base font-semibold text-slate-900">
-              Complete Web Development Course
-            </h3>
-            <p className="text-sm text-slate-600 mt-1">
-              Programming Hero • 2026
-            </p>
-            <p className="mt-2 text-sm text-slate-700 leading-6">
-              Full-stack web development training with real-world project implementation.
-            </p>
-          </div>
+          <p className="text-sm text-slate-700 leading-6">
+            • Built 3 full-stack MERN applications with authentication and CRUD systems<br />
+            • Developed responsive UI using React and Tailwind CSS<br />
+            • Integrated Firebase authentication and real-time features<br />
+            • Focused on clean architecture and reusable components
+          </p>
         </section>
 
-        {/* Education */}
-        <section className="mt-8">
-          <h2 className="text-sm font-bold uppercase tracking-[2px] text-slate-900 mb-4">
+        {/* ================= CERTIFICATION ================= */}
+        <section className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
+            Certification
+          </h2>
+
+          <p className="text-sm font-semibold">
+            Complete Web Development Course
+          </p>
+          <p className="text-sm text-slate-600">
+            Programming Hero • 2026
+          </p>
+        </section>
+
+        {/* ================= EDUCATION ================= */}
+        <section className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
             Education
           </h2>
 
-          <div className="space-y-4 text-sm">
+          <div className="text-sm space-y-2">
+
             <div>
-              <h3 className="font-semibold">
+              <p className="font-semibold">
                 Diploma in Computer Science & Technology
-              </h3>
-              <p className="text-slate-700">AITVET, Dhaka</p>
-              <p className="text-slate-500">2023 – Present</p>
+              </p>
+              <p className="text-slate-600">
+                AITVET, Dhaka (2023 – Present)
+              </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
+              <p className="font-semibold">
                 Higher Secondary Certificate (Science)
-              </h3>
-              <p className="text-slate-700">
-                Khepupara Government Model Secondary High School
               </p>
-              <p className="text-slate-500">Completed in 2022</p>
+              <p className="text-slate-600">
+                Khepupara Government Model School (2022)
+              </p>
             </div>
+
           </div>
         </section>
 
