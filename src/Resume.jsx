@@ -4,196 +4,309 @@ const Resume = () => {
   const projects = [
     {
       name: "UrbanFix",
-      tech: "React • Tailwind • Firebase",
-      desc: "Civic issue reporting platform with real-time updates and role-based workflow system.",
+      tech: "React.js • Tailwind CSS • Firebase",
       live: "https://urban-fix-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/urban-fix-project",
+      points: [
+        "Developed a civic issue reporting platform with authentication and role-based workflows.",
+        "Built responsive React interfaces using reusable component architecture.",
+        "Integrated Firebase authentication and real-time database functionality.",
+      ],
     },
+
     {
       name: "ToyVerse",
-      tech: "React • Node • Express",
-      desc: "Marketplace platform with authentication, dashboard and product management system.",
+      tech: "React.js • Node.js • Express.js • MongoDB",
       live: "https://toyverse-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/toyverse-project",
+      points: [
+        "Built a full-stack toy marketplace with protected routes and dashboard functionality.",
+        "Implemented CRUD operations and REST API integration using Express.js and MongoDB.",
+        "Designed responsive UI with React.js and Tailwind CSS.",
+      ],
     },
+
     {
       name: "PawMart",
-      tech: "React • Firebase • MongoDB",
-      desc: "Pet adoption and e-commerce system with secure listings and user workflows.",
+      tech: "React.js • Firebase • MongoDB",
       live: "https://pawmart-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/pawmart-project",
+      points: [
+        "Created a pet adoption and e-commerce platform with secure user workflows.",
+        "Integrated Firebase authentication and MongoDB database operations.",
+        "Focused on clean UI structure, responsiveness and maintainable code.",
+      ],
     },
   ];
 
   return (
-    <div className="bg-slate-100 flex justify-center px-4 py-6 print:bg-white">
-      <div className="w-full max-w-[800px] bg-white p-7 text-slate-800 print:p-0">
+    <div className="min-h-screen bg-slate-200 py-6 px-4 print:bg-white">
+
+      <div className="max-w-[850px] mx-auto bg-white px-9 py-8 shadow-sm print:shadow-none print:p-0 text-slate-900">
 
         {/* ================= HEADER ================= */}
-        <header className="border-b pb-4">
-          <div className="flex justify-between items-start gap-6">
 
-            <div>
-              <h1 className="text-3xl font-bold text-slate-900">
-                Mehedi Robi
-              </h1>
-              <p className="text-sm text-slate-600 mt-1">
-                Frontend Developer | React.js | Modern Web Applications
-              </p>
-            </div>
+        <header className="text-center border-b border-slate-400 pb-4">
 
-            <div className="text-[12px] text-right text-slate-600 space-y-1">
-              <p>mehedirobidev@gmail.com</p>
-              <p>+8801336458100</p>
-              <p>Dhaka, Bangladesh</p>
+          <h1 className="text-[32px] font-bold tracking-tight leading-none">
+            Mehedi Robi
+          </h1>
 
-              <div className="flex gap-3 justify-end text-blue-600 text-sm mt-1">
-                <a href="https://github.com/mehedirobi">GitHub</a>
-                <a href="https://linkedin.com">LinkedIn</a>
-                <a href="https://mehedi-robi-portfolio.netlify.app/">Portfolio</a>
-              </div>
-            </div>
+          <p className="mt-1 text-[15px] font-semibold text-slate-700">
+            Frontend Developer | React.js | Modern Web Applications
+          </p>
+
+          <div className="mt-2 flex flex-wrap justify-center items-center gap-x-2 text-[13px] font-medium text-slate-700">
+            <span>+8801336458100</span>
+            <span>|</span>
+            <span>mehedirobidev@gmail.com</span>
+            <span>|</span>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+
+          <div className="mt-1 flex justify-center gap-3 text-[13px] font-medium text-slate-800">
+
+            <a
+              href="https://mehedirobi-portfolio.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              Portfolio
+            </a>
+
+            <span>|</span>
+
+            <a
+              href="https://www.linkedin.com/in/mehedirobii/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              LinkedIn
+            </a>
+
+            <span>|</span>
+
+            <a
+              href="https://github.com/mehedirobi"
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              GitHub
+            </a>
 
           </div>
+
         </header>
 
         {/* ================= SUMMARY ================= */}
+
         <section className="mt-5">
-          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
-            Summary
+
+          <h2 className="border-b border-slate-400 pb-1 text-[15px] font-bold">
+            Professional Summary
           </h2>
 
-          <p className="text-sm leading-6 text-slate-700">
-            Frontend developer focused on building scalable, responsive and
-            production-ready web applications using React, Tailwind CSS and
-            modern JavaScript. Strong focus on UI/UX, reusable components and
-            performance optimization.
+          <p className="mt-2 text-[13px] leading-[22px] text-slate-800">
+            Frontend developer focused on building responsive and user-friendly
+            web applications using React.js, Tailwind CSS and modern JavaScript.
+            Experienced in developing full-stack MERN applications with
+            authentication, CRUD functionality and clean UI architecture.
           </p>
+
         </section>
 
         {/* ================= SKILLS ================= */}
+
         <section className="mt-5">
-          <h2 className="text-xs font-bold uppercase tracking-widest mb-3">
-            Skills
+
+          <h2 className="border-b border-slate-400 pb-1 text-[15px] font-bold">
+            Technical Skills
           </h2>
 
-          <div className="grid grid-cols-3 gap-6 text-sm">
+          <div className="mt-2 space-y-1.5 text-[13px] text-slate-800">
 
-            <div>
-              <p className="font-semibold text-slate-900 mb-1">Frontend</p>
-              <p className="text-slate-700 leading-5">
-                React.js, JavaScript, Tailwind CSS, HTML5, CSS3
-              </p>
-            </div>
+            <p>
+              <span className="font-bold">Frontend:</span>{" "}
+              React.js | JavaScript (ES6+) | Tailwind CSS | HTML5 | CSS3 |
+              Responsive Design
+            </p>
 
-            <div>
-              <p className="font-semibold text-slate-900 mb-1">Backend</p>
-              <p className="text-slate-700 leading-5">
-                Node.js, Express.js, MongoDB, Firebase, REST APIs
-              </p>
-            </div>
+            <p>
+              <span className="font-bold">Backend:</span>{" "}
+              Node.js | Express.js | MongoDB | Firebase | REST APIs
+            </p>
 
-            <div>
-              <p className="font-semibold text-slate-900 mb-1">Tools</p>
-              <p className="text-slate-700 leading-5">
-                Git, GitHub, Vite, VS Code, Postman
-              </p>
-            </div>
+            <p>
+              <span className="font-bold">Tools:</span>{" "}
+              Git | GitHub | VS Code | Postman | Vite
+            </p>
+
+            <p>
+              <span className="font-bold">Soft Skills:</span>{" "}
+              Problem Solving | Communication | Team Collaboration
+            </p>
 
           </div>
+
         </section>
 
         {/* ================= PROJECTS ================= */}
+
         <section className="mt-5">
-          <h2 className="text-xs font-bold uppercase tracking-widest mb-3">
+
+          <h2 className="border-b border-slate-400 pb-1 text-[15px] font-bold">
             Projects
           </h2>
 
-          <div className="space-y-3">
-            {projects.map((p, i) => (
-              <div key={i} className="border-l-2 border-slate-200 pl-3">
+          <div className="mt-3 space-y-5">
 
-                <div className="flex justify-between items-center">
-                  <h3 className="text-sm font-semibold text-slate-900">
-                    {p.name}
-                  </h3>
-                  <span className="text-[11px] text-slate-500">
-                    {p.tech}
-                  </span>
+            {projects.map((project, index) => (
+              <div key={index}>
+
+                <div className="flex justify-between items-start gap-4">
+
+                  <div>
+
+                    <h3 className="text-[14px] font-bold text-slate-900">
+                      {project.name}
+                    </h3>
+
+                    <p className="mt-0.5 text-[12px] font-medium text-slate-600">
+                      {project.tech}
+                    </p>
+
+                  </div>
+
+                  <div className="flex gap-3 whitespace-nowrap text-[12px] font-semibold">
+
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline"
+                    >
+                      Live Link
+                    </a>
+
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline"
+                    >
+                      GitHub
+                    </a>
+
+                  </div>
+
                 </div>
 
-                <p className="text-sm text-slate-700 mt-1 leading-5">
-                  {p.desc}
-                </p>
+                <ul className="mt-2 space-y-1 text-[13px] leading-[20px] text-slate-800">
 
-                <div className="text-[12px] text-blue-600 flex gap-4 mt-1">
-                  <a href={p.live}>Live</a>
-                  <a href={p.github}>GitHub</a>
-                </div>
+                  {project.points.map((point, i) => (
+                    <li key={i}>• {point}</li>
+                  ))}
+
+                </ul>
 
               </div>
             ))}
+
           </div>
+
         </section>
 
-        {/* ================= EXPERIENCE ================= */}
+        {/* ================= PRACTICAL EXPERIENCE ================= */}
+
         <section className="mt-5">
-          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
-            Experience / Practical Work
+
+          <h2 className="border-b border-slate-400 pb-1 text-[15px] font-bold">
+            Practical Experience
           </h2>
 
-          <p className="text-sm text-slate-700 leading-6">
-            • Built 3 full-stack MERN applications with authentication and CRUD systems<br />
-            • Developed responsive UI using React and Tailwind CSS<br />
-            • Integrated Firebase authentication and real-time features<br />
-            • Focused on clean architecture and reusable components
-          </p>
-        </section>
+          <div className="mt-2 space-y-1 text-[13px] leading-[20px] text-slate-800">
 
-        {/* ================= CERTIFICATION ================= */}
-        <section className="mt-5">
-          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
-            Certification
-          </h2>
+            <p>
+              • Built multiple full-stack MERN applications with authentication
+              and CRUD functionality.
+            </p>
 
-          <p className="text-sm font-semibold">
-            Complete Web Development Course
-          </p>
-          <p className="text-sm text-slate-600">
-            Programming Hero • 2026
-          </p>
+            <p>
+              • Developed responsive and reusable frontend interfaces using
+              React.js and Tailwind CSS.
+            </p>
+
+            <p>
+              • Worked with Firebase authentication, REST APIs and MongoDB
+              database operations.
+            </p>
+
+            <p>
+              • Focused on maintainable code structure and scalable UI
+              development practices.
+            </p>
+
+          </div>
+
         </section>
 
         {/* ================= EDUCATION ================= */}
+
         <section className="mt-5">
-          <h2 className="text-xs font-bold uppercase tracking-widest mb-2">
+
+          <h2 className="border-b border-slate-400 pb-1 text-[15px] font-bold">
             Education
           </h2>
 
-          <div className="text-sm space-y-2">
+          <div className="mt-2 flex justify-between items-start text-[13px]">
 
             <div>
-              <p className="font-semibold">
+
+              <h3 className="font-bold text-slate-900">
                 Diploma in Computer Science & Technology
+              </h3>
+
+              <p className="text-slate-700">
+                Ahsanullah Institute of Technical & Vocational Education and Training (AITVET), Dhaka
               </p>
-              <p className="text-slate-600">
-                AITVET, Dhaka (2023 – Present)
-              </p>
+
             </div>
 
-            <div>
-              <p className="font-semibold">
-                Higher Secondary Certificate (Science)
-              </p>
-              <p className="text-slate-600">
-                Khepupara Government Model School (2022)
-              </p>
-            </div>
+            <p className="whitespace-nowrap font-medium text-slate-700">
+              2023 – Present
+            </p>
 
           </div>
+
+        </section>
+
+        {/* ================= CERTIFICATION ================= */}
+
+        <section className="mt-5">
+
+          <h2 className="border-b border-slate-400 pb-1 text-[15px] font-bold">
+            Certification
+          </h2>
+
+          <div className="mt-2 text-[13px]">
+
+            <p className="font-bold text-slate-900">
+              Complete Web Development Course
+            </p>
+
+            <p className="text-slate-700">
+              Programming Hero
+            </p>
+
+          </div>
+
         </section>
 
       </div>
+
     </div>
   );
 };
