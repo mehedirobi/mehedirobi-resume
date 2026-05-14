@@ -4,56 +4,45 @@ const Resume = () => {
   const projects = [
     {
       name: "UrbanFix",
-      tech: "React.js • Node.js • Express.js • MongoDB",
+      tech: "React.js • Firebase • MongoDB",
       live: "https://urban-fix-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/urban-fix-project",
       points: [
-        "Built a civic issue reporting platform with authentication and role-based workflows.",
-        "Integrated Firebase authentication with responsive React interfaces.",
+        "Developed a civic issue reporting platform with authentication and role-based workflows.",
+        "Built responsive user interfaces and integrated Firebase authentication with MongoDB-based functionality.",
       ],
     },
 
     {
       name: "ToyVerse",
-      tech: "React.js • Node.js • Express.js • MongoDB",
+      tech: "React.js • Tailwind CSS • Node.js • MongoDB",
       live: "https://toyverse-project-01.netlify.app/",
       github: "https://github.com/mehedirobi/toyverse-project",
       points: [
-        "Developed a full-stack toy marketplace with dashboard and protected routes.",
-        "Implemented CRUD operations and REST API integration using MongoDB.",
-      ],
-    },
-
-    {
-      name: "PawMart",
-      tech: "React.js • Node.js • Express.js • MongoDB",
-      live: "https://pawmart-project-01.netlify.app/",
-      github: "https://github.com/mehedirobi/pawmart-project",
-      points: [
-        "Created a pet adoption and e-commerce platform with secure user workflows.",
-        "Focused on responsive UI, clean structure and maintainable frontend architecture.",
+        "Built a full-stack toy marketplace with dashboard, protected routes and CRUD functionality.",
+        "Integrated REST APIs and developed responsive user-focused interfaces using React.js and Tailwind CSS.",
       ],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100 py-6 px-4 print:bg-white print:py-0">
+    <div className="min-h-screen bg-slate-100 px-4 py-6 font-[Inter] print:bg-white print:py-0">
 
-      <div className="max-w-[794px] mx-auto bg-white px-8 py-6 shadow-sm text-slate-900 print:shadow-none print:max-w-full print:p-0">
+      <div className="mx-auto max-w-[794px] bg-white px-8 py-6 text-slate-900 shadow-sm print:max-w-full print:p-0 print:shadow-none">
 
         {/* ================= HEADER ================= */}
 
-        <header className="text-center border-b border-slate-300 pb-3">
+        <header className="border-b border-slate-300 pb-3 text-center">
 
-          <h1 className="text-[30px] font-bold tracking-tight leading-none">
+          <h1 className="text-[30px] font-bold tracking-[-0.5px] leading-none text-slate-900">
             Mehedi Robi
           </h1>
 
           <p className="mt-1 text-[14px] font-semibold text-slate-700">
-            Frontend Developer | React.js | Modern Web Applications
+            Frontend Developer | React.js & MERN Stack
           </p>
 
-          <div className="mt-1.5 flex flex-wrap justify-center items-center gap-x-2 text-[12px] font-medium text-slate-700">
+          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 text-[12px] font-medium text-slate-700">
             <span>+8801336458100</span>
             <span>|</span>
             <span>mehedirobidev@gmail.com</span>
@@ -61,13 +50,13 @@ const Resume = () => {
             <span>Dhaka, Bangladesh</span>
           </div>
 
-          <div className="mt-1 flex justify-center gap-3 text-[12px] font-medium text-slate-800">
+          <div className="mt-1 flex justify-center gap-3 text-[12px] font-medium text-slate-700">
 
             <a
               href="https://mehedirobi-portfolio.netlify.app/"
               target="_blank"
               rel="noreferrer"
-              className="underline"
+              className="transition-all hover:text-black hover:underline"
             >
               Portfolio
             </a>
@@ -78,7 +67,7 @@ const Resume = () => {
               href="https://www.linkedin.com/in/mehedirobii/"
               target="_blank"
               rel="noreferrer"
-              className="underline"
+              className="transition-all hover:text-black hover:underline"
             >
               LinkedIn
             </a>
@@ -89,7 +78,7 @@ const Resume = () => {
               href="https://github.com/mehedirobi"
               target="_blank"
               rel="noreferrer"
-              className="underline"
+              className="transition-all hover:text-black hover:underline"
             >
               GitHub
             </a>
@@ -102,15 +91,18 @@ const Resume = () => {
 
         <section className="mt-4">
 
-          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold">
+          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold uppercase tracking-wide">
             Professional Summary
           </h2>
 
           <p className="mt-1.5 text-[12px] leading-[20px] text-slate-800">
-            Frontend developer focused on building responsive and user-friendly
-            web applications using React.js, Tailwind CSS and modern JavaScript.
-            Experienced in developing MERN applications with authentication,
-            CRUD functionality and clean UI architecture.
+            Frontend developer and Diploma in Computer Science & Technology
+            student with experience building responsive and user-focused web
+            applications using React.js, JavaScript and modern frontend
+            technologies. Skilled in developing MERN stack applications with
+            authentication, REST API integration and clean UI architecture.
+            Strong interest in problem solving, communication and collaborative
+            work environments.
           </p>
 
         </section>
@@ -119,25 +111,31 @@ const Resume = () => {
 
         <section className="mt-4">
 
-          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold">
+          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold uppercase tracking-wide">
             Technical Skills
           </h2>
 
           <div className="mt-1.5 space-y-1 text-[12px] leading-[19px] text-slate-800">
 
             <p>
-              <span className="font-bold">Frontend:</span>{" "}
-              React.js | JavaScript (ES6+) | Tailwind CSS | HTML5 | CSS3
+              <span className="font-bold text-slate-900">Frontend:</span>{" "}
+              React.js | JavaScript (ES6+) | Tailwind CSS | HTML5 | CSS3 |
+              Responsive Design
             </p>
 
             <p>
-              <span className="font-bold">Backend:</span>{" "}
+              <span className="font-bold text-slate-900">Backend:</span>{" "}
               Node.js | Express.js | MongoDB | Firebase | REST APIs
             </p>
 
             <p>
-              <span className="font-bold">Tools:</span>{" "}
-              Git | GitHub | VS Code | Vite
+              <span className="font-bold text-slate-900">Tools:</span>{" "}
+              Git | GitHub | VS Code | Postman | Vite
+            </p>
+
+            <p>
+              <span className="font-bold text-slate-900">Soft Skills:</span>{" "}
+              Communication | Problem Solving | Team Collaboration
             </p>
 
           </div>
@@ -148,7 +146,7 @@ const Resume = () => {
 
         <section className="mt-4">
 
-          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold">
+          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold uppercase tracking-wide">
             Projects
           </h2>
 
@@ -157,7 +155,7 @@ const Resume = () => {
             {projects.map((project, index) => (
               <div key={index}>
 
-                <div className="flex justify-between items-start gap-3">
+                <div className="flex items-start justify-between gap-3">
 
                   <div>
 
@@ -171,13 +169,13 @@ const Resume = () => {
 
                   </div>
 
-                  <div className="flex gap-2 whitespace-nowrap text-[11px] font-semibold">
+                  <div className="flex gap-2 whitespace-nowrap text-[11px] font-semibold text-slate-700">
 
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="underline"
+                      className="transition-all hover:text-black hover:underline"
                     >
                       Live
                     </a>
@@ -186,7 +184,7 @@ const Resume = () => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="underline"
+                      className="transition-all hover:text-black hover:underline"
                     >
                       GitHub
                     </a>
@@ -214,11 +212,11 @@ const Resume = () => {
 
         <section className="mt-4">
 
-          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold">
+          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold uppercase tracking-wide">
             Education
           </h2>
 
-          <div className="mt-1.5 flex justify-between items-start text-[12px]">
+          <div className="mt-1.5 flex items-start justify-between text-[12px]">
 
             <div>
 
@@ -227,7 +225,7 @@ const Resume = () => {
               </h3>
 
               <p className="text-slate-700">
-                Ahsanullah Institute of Technical & Vocational Education and Training (AITVET), Dhaka
+                AITVET, Dhaka
               </p>
 
             </div>
@@ -244,15 +242,29 @@ const Resume = () => {
 
         <section className="mt-4">
 
-          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold">
+          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold uppercase tracking-wide">
             Certification
           </h2>
 
-          <p className="mt-1.5 text-[12px] text-slate-800">
-            <span className="font-bold">
+          <p className="mt-1.5 text-[12px] leading-[19px] text-slate-800">
+            <span className="font-bold text-slate-900">
               Complete Web Development Course
             </span>{" "}
             — Programming Hero
+          </p>
+
+        </section>
+
+        {/* ================= LANGUAGES ================= */}
+
+        <section className="mt-4">
+
+          <h2 className="border-b border-slate-300 pb-1 text-[14px] font-bold uppercase tracking-wide">
+            Languages
+          </h2>
+
+          <p className="mt-1.5 text-[12px] text-slate-800">
+            Bangla — Native | English — Intermediate
           </p>
 
         </section>
