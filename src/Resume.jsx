@@ -1,6 +1,7 @@
 import React from "react";
 
 const Resume = () => {
+  // Projects data
   const projects = [
     {
       name: "UrbanFix",
@@ -32,7 +33,6 @@ const Resume = () => {
   return (
     <div className="min-h-screen bg-slate-100 px-4 py-6 font-[Inter] print:bg-white print:py-0">
       <div className="mx-auto max-w-[794px] bg-white px-8 py-6 text-slate-900 shadow-sm print:max-w-full print:p-0 print:shadow-none">
-        
         {/* Header */}
         <header className="border-b border-slate-300 pb-4 text-center">
           <h1 className="text-[30px] font-bold tracking-tight text-slate-900">
@@ -40,9 +40,10 @@ const Resume = () => {
           </h1>
 
           <p className="mt-1 text-[14px] font-semibold text-slate-700">
-            Frontend Developer | React.js & MERN Stack
+            MERN Stack Developer
           </p>
 
+          {/* Contact Information */}
           <div className="mt-2 flex flex-wrap items-center justify-center gap-x-2 text-[12px] text-slate-700">
             <span>+8801336458100</span>
             <span>|</span>
@@ -90,13 +91,14 @@ const Resume = () => {
           <h2 className={sectionTitleClass}>Professional Summary</h2>
 
           <p className="mt-2 text-[12px] leading-[19px] text-slate-800">
-            Frontend Developer with hands-on experience building responsive and
-            scalable web applications using React.js, JavaScript, Tailwind CSS,
-            and the MERN stack. Experienced in developing full-stack
-            applications, integrating REST APIs, implementing authentication,
-            and building reusable UI components. Passionate about creating
-            clean, maintainable, and user-focused solutions through real-world
-            project development.
+            MERN Stack Developer with hands-on experience building
+            responsive, scalable, and production-ready web applications using
+            MongoDB, Express.js, React.js, and Node.js. Proficient in developing
+            RESTful APIs, implementing authentication, performing CRUD
+            operations, integrating frontend applications with backend services,
+            and designing reusable UI components. Passionate about writing
+            clean, maintainable code and continuously improving software
+            engineering skills through real-world project development.
           </p>
         </section>
 
@@ -104,36 +106,33 @@ const Resume = () => {
         <section className="mt-4">
           <h2 className={sectionTitleClass}>Technical Skills</h2>
 
-          <div className="mt-2 space-y-1 text-[12px] leading-[18px] text-slate-800">
+          <div className="mt-2 space-y-1 text-[12px] leading-[18px]">
             <p>
-              <span className="font-bold text-slate-900">Frontend:</span>{" "}
-              React.js, JavaScript (ES6+), Tailwind CSS, HTML5, CSS3
+              <span className="font-bold">Frontend:</span> HTML, CSS, Tailwind CSS, JavaScript, React.js, React Router, Responsive Design
             </p>
 
             <p>
-              <span className="font-bold text-slate-900">Backend:</span>{" "}
-              Node.js, Express.js
+              <span className="font-bold">Backend:</span> Node.js, Express.js, Firebase
             </p>
 
             <p>
-              <span className="font-bold text-slate-900">Database:</span>{" "}
-              MongoDB
+              <span className="font-bold">Database:</span> MongoDB
             </p>
 
             <p>
-              <span className="font-bold text-slate-900">Authentication:</span>{" "}
-              Firebase Authentication, Protected Routes
+              <span className="font-bold">Authentication:</span> Firebase
+              Authentication, Protected Routes
             </p>
 
             <p>
-              <span className="font-bold text-slate-900">Tools:</span>{" "}
-              Git, GitHub, VS Code, Vite
+              <span className="font-bold">Tools:</span> Git, GitHub, VS
+              Code, Vercel, Netlify, Vite, thunder client
             </p>
 
             <p>
-              <span className="font-bold text-slate-900">Concepts:</span>{" "}
-              REST APIs, CRUD Operations, Responsive Design,
-              Component-Based Architecture
+              <span className="font-bold">Core Concepts:</span> CRUD Operations,
+              API Integration, State Management, Component-Based Architecture,
+              Responsive UI
             </p>
           </div>
         </section>
@@ -161,7 +160,7 @@ const Resume = () => {
                       href={project.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-black hover:underline"
+                      className="hover:text-black hover:underline font-bold"
                     >
                       Live Demo
                     </a>
@@ -172,7 +171,7 @@ const Resume = () => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-black hover:underline"
+                      className="hover:text-black hover:underline font-bold"
                     >
                       GitHub
                     </a>
@@ -205,7 +204,7 @@ const Resume = () => {
               </p>
             </div>
 
-            <p className="whitespace-nowrap font-medium text-slate-700">
+            <p className="whitespace-nowrap font-bold text-slate-700">
               Expected Graduation: 2027
             </p>
           </div>
@@ -217,16 +216,12 @@ const Resume = () => {
 
           <div className="mt-2 space-y-1 text-[12px] text-slate-800">
             <p>
-              <span className="font-bold text-slate-900">
-                Certification:
-              </span>{" "}
+              <span className="font-bold text-slate-900">Certification:</span>{" "}
               Complete Web Development Course — Programming Hero
             </p>
 
             <p>
-              <span className="font-bold text-slate-900">
-                Languages:
-              </span>{" "}
+              <span className="font-bold text-slate-900">Languages:</span>{" "}
               Bangla (Native), English (Intermediate)
             </p>
           </div>
