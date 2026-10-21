@@ -15,19 +15,24 @@ const profile = {
 };
 
 const skills = [
-  [
-    "Frontend",
-    "HTML5, CSS3, JavaScript (ES6+), React.js, React Router, Tailwind CSS",
-  ],
-  ["Backend", "Node.js, Express.js, RESTful APIs"],
-  [
-    "Database & Authentication",
-    "MongoDB, Firebase Authentication, Protected Routes",
-  ],
-  [
-    "Tools & Concepts",
-    "Git, GitHub, CRUD Operations, API Integration, Responsive Design",
-  ],
+  {
+    category: "Frontend",
+    items:
+      "HTML5, CSS3, JavaScript (ES6+), React.js, React Router, Tailwind CSS",
+  },
+  {
+    category: "Backend",
+    items: "Node.js, Express.js, RESTful API Development",
+  },
+  {
+    category: "Database & Authentication",
+    items: "MongoDB, Firebase Authentication, Protected Routes",
+  },
+  {
+    category: "Tools & Concepts",
+    items:
+      "Git, GitHub, CRUD Operations, API Integration, Responsive Design",
+  },
 ];
 
 const projects = [
@@ -35,33 +40,33 @@ const projects = [
     name: "Khelaro",
     description: "Sports Turf Booking Platform",
     tech: "React.js, Tailwind CSS, Node.js, Express.js, MongoDB",
-    live: "https://khelaro.netlify.app/",
+    live: "https://khelaro-project.netlify.app/",
     repositories: [
       ["Client", "https://github.com/mehedirobi/khelaro-client"],
       ["Server", "https://github.com/mehedirobi/khelaro-server"],
     ],
     points: [
-      "Developed a full-stack turf booking platform with turf discovery, date and time availability, and booking management.",
-      "Implemented customer and turf-owner workflows with frontend-backend REST API integration.",
+      "Developed a full-stack turf booking platform featuring turf discovery, date and time selection, and booking management.",
+      "Integrated customer and turf-owner workflows with RESTful APIs and backend data operations.",
     ],
   },
   {
     name: "UrbanFix",
     description: "Civic Issue Reporting Platform",
     tech: "React.js, Tailwind CSS, Node.js, Express.js, Firebase, MongoDB",
-    live: "https://urban-fix-project-01.netlify.app/",
+    live: "https://urbanfix-project-01.netlify.app/",
     repositories: [
       ["Client", "https://github.com/mehedirobi/urban-fix"],
       ["Server", "https://github.com/mehedirobi/urban-fix-server"],
     ],
     points: [
-      "Built a full-stack platform for reporting and tracking civic infrastructure issues.",
-      "Integrated Firebase Authentication, protected routes, REST APIs, and MongoDB data management.",
+      "Built a full-stack platform for reporting, tracking, and managing civic infrastructure issues.",
+      "Integrated Firebase Authentication, protected routes, RESTful APIs, and MongoDB data operations.",
     ],
   },
   {
     name: "PawMart",
-    description: "Pet Adoption & Supply Portal",
+    description: "Pet Adoption & Supply Platform",
     tech: "React.js, Tailwind CSS, Node.js, Express.js, MongoDB, Firebase",
     live: "https://pawmart-project-01.netlify.app/",
     repositories: [
@@ -69,16 +74,16 @@ const projects = [
       ["Server", "https://github.com/mehedirobi/pawmart-project-server"],
     ],
     points: [
-      "Built a responsive platform for pet adoption and pet supply shopping with category-based browsing and filtering.",
-      "Implemented Firebase email/password and Google authentication, listing CRUD operations, pet adoption, and product ordering.",
-      "Developed My Listings and My Orders dashboards, PDF order reports, dark/light mode, and REST API integration.",
+      "Developed a responsive platform for pet adoption and pet-supply shopping with category-based browsing and filtering.",
+      "Implemented email/password and Google authentication, listing CRUD operations, adoption workflows, and product ordering.",
+      "Built listing and order dashboards, PDF order reports, and REST API integrations.",
     ],
   },
 ];
 
 const Section = ({ title, children }) => (
-  <section className="resume-section">
-    <h2 className="mb-2 border-b border-slate-300 pb-1.5 text-[12px] font-bold uppercase tracking-[0.09em] text-slate-900">
+  <section className="resume-section min-w-0">
+    <h2 className="mb-1.5 border-b border-slate-300 pb-1 text-[11px] font-bold uppercase tracking-[0.09em] text-slate-900">
       {title}
     </h2>
     {children}
@@ -90,41 +95,86 @@ const ExternalLink = ({ href, children }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-slate-800 underline-offset-2 hover:underline print:no-underline"
+    className="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-slate-950 print:text-slate-800 print:no-underline"
   >
     {children}
   </a>
 );
 
+const Project = ({ project }) => (
+  <article className="project-item min-w-0 break-inside-avoid">
+    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-3 print:flex-row print:items-start print:justify-between print:gap-3">
+      <div className="min-w-0">
+        <h3 className="text-[12px] font-bold text-slate-950">
+          {project.name}
+        </h3>
+        <p className="text-[10.5px] text-slate-600">
+          {project.description}
+        </p>
+      </div>
+
+      <nav
+        aria-label={`${project.name} project links`}
+        className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[10px] sm:justify-end print:shrink-0 print:justify-end"
+      >
+        <ExternalLink href={project.live}>Live Demo</ExternalLink>
+
+        {project.repositories.map(([label, url]) => (
+          <ExternalLink key={url} href={url}>
+            {label}
+          </ExternalLink>
+        ))}
+      </nav>
+    </div>
+
+    <p className="mt-1 text-[10.5px] leading-[1.4] text-slate-600">
+      <span className="font-semibold text-slate-800">Tech Stack:</span>{" "}
+      {project.tech}
+    </p>
+
+    <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[10.5px] leading-[1.4] text-slate-800">
+      {project.points.map((point) => (
+        <li key={point}>{point}</li>
+      ))}
+    </ul>
+  </article>
+);
+
 const Resume = () => {
   return (
-    <main className="resume-page mx-auto flex min-h-[297mm] w-full max-w-[210mm] flex-col justify-between gap-4 bg-white px-8 py-8 font-sans text-[11.5px] leading-[1.45] text-slate-800 sm:px-10 print:min-h-0 print:w-full print:max-w-none print:gap-3 print:px-0 print:py-0">
-      {/* Header */}
-      <header className="border-b border-slate-300 pb-4 text-center">
-        <h1 className="text-[30px] font-bold leading-tight tracking-tight text-slate-950">
+    <main className="resume-page mx-auto w-full max-w-[210mm] bg-white px-5 py-6 font-sans text-[11px] leading-[1.45] text-slate-800 sm:px-9 sm:py-8 print:w-full print:max-w-none print:px-0 print:py-0">
+      <header className="border-b border-slate-300 pb-3 text-center">
+        <h1 className="text-[28px] font-bold leading-tight tracking-tight text-slate-950 sm:text-[30px]">
           {profile.name}
         </h1>
 
-        <p className="mt-1.5 text-[14px] font-semibold text-slate-700">
+        <p className="mt-1 text-[13px] font-semibold tracking-wide text-slate-700">
           {profile.role}
         </p>
 
-        <div className="mt-3 flex flex-wrap justify-center gap-x-2.5 gap-y-1.5 text-[10.5px]">
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <span className="text-slate-400">•</span>
+        <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[10px]">
+          <a
+            className="break-all hover:underline"
+            href={`mailto:${profile.email}`}
+          >
+            {profile.email}
+          </a>
+          <span className="text-slate-400" aria-hidden="true">•</span>
           <a href={`tel:${profile.phone}`}>{profile.phone}</a>
-          <span className="text-slate-400">•</span>
+          <span className="text-slate-400" aria-hidden="true">•</span>
           <span>{profile.location}</span>
         </div>
 
         <nav
           aria-label="Professional profiles"
-          className="mt-2 flex flex-wrap justify-center gap-x-3.5 text-[10.5px] font-medium"
+          className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10px]"
         >
           {profile.links.map(([label, url], index) => (
             <React.Fragment key={label}>
               {index > 0 && (
-                <span className="text-slate-400">•</span>
+                <span className="text-slate-400" aria-hidden="true">
+                  •
+                </span>
               )}
               <ExternalLink href={url}>{label}</ExternalLink>
             </React.Fragment>
@@ -132,122 +182,71 @@ const Resume = () => {
         </nav>
       </header>
 
-      {/* Professional Summary */}
-      <Section title="Professional Summary">
-        <p className="text-justify">
-          MERN Stack Developer with hands-on project experience building
-          responsive, full-stack web applications using MongoDB, Express.js,
-          React.js, and Node.js. Skilled in RESTful API development, CRUD
-          operations, Firebase Authentication, protected routes, and
-          database integration. Focused on reusable components, clean code,
-          maintainability, and practical problem-solving, with a long-term
-          goal of becoming a Software Engineer.
-        </p>
-      </Section>
+      <div className="mt-3.5 space-y-3.5 print:mt-3 print:space-y-3">
+        <Section title="Professional Summary">
+          <p>
+            MERN Stack Developer and Diploma student in Computer Science
+            &amp; Technology with hands-on experience building responsive,
+            full-stack web applications using MongoDB, Express.js, React.js,
+            and Node.js. Skilled in reusable React components, RESTful API
+            integration, authentication, protected routes, and database-driven
+            CRUD operations. Focused on clean, maintainable code, responsive
+            UI development, and building reliable, user-friendly web
+            applications.
+          </p>
+        </Section>
 
-      {/* Technical Skills */}
-      <Section title="Technical Skills">
-        <div className="space-y-1.5">
-          {skills.map(([label, value]) => (
-            <p key={label}>
-              <span className="font-semibold text-slate-900">
-                {label}:
-              </span>{" "}
-              {value}
-            </p>
-          ))}
-        </div>
-      </Section>
-
-      {/* Projects */}
-      <Section title="Projects">
-        <div className="space-y-4">
-          {projects.map((project) => (
-            <article
-              key={project.name}
-              className="break-inside-avoid"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <h3 className="text-[13px] font-bold text-slate-950">
-                    {project.name}
-                  </h3>
-
-                  <p className="text-[11.5px] text-slate-600">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="flex shrink-0 flex-wrap justify-end gap-x-2.5 gap-y-1 pt-0.5 text-[10.5px] font-medium">
-                  {project.live && (
-                    <ExternalLink href={project.live}>
-                      Live Demo
-                    </ExternalLink>
-                  )}
-
-                  {project.repositories.map(([label, url]) => (
-                    <ExternalLink key={url} href={url}>
-                      {label}
-                    </ExternalLink>
-                  ))}
-                </div>
-              </div>
-
-              <p className="mt-1.5 text-[10.8px] text-slate-600">
-                <span className="font-semibold text-slate-800">
-                  Tech Stack:
+        <Section title="Technical Skills">
+          <div className="space-y-1">
+            {skills.map(({ category, items }) => (
+              <p key={category}>
+                <span className="font-semibold text-slate-900">
+                  {category}:
                 </span>{" "}
-                {project.tech}
+                {items}
               </p>
+            ))}
+          </div>
+        </Section>
 
-              <ul className="mt-1.5 list-disc space-y-0.5 pl-4">
-                {project.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </Section>
+        <Section title="Projects">
+          <div className="space-y-3 print:space-y-2.5">
+            {projects.map((project) => (
+              <Project key={project.name} project={project} />
+            ))}
+          </div>
+        </Section>
 
-      {/* Education */}
-      <Section title="Education">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <h3 className="font-semibold text-slate-900">
-              Diploma in Computer Science &amp; Technology (CST)
-            </h3>
+        <Section title="Education">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <h3 className="font-semibold text-slate-900">
+                Diploma in Computer Science &amp; Technology (CST)
+              </h3>
+              <p className="mt-0.5 text-slate-700">
+                Ahsanullah Institute of Technical &amp; Vocational Education
+                &amp; Training (AITVET), Dhaka
+              </p>
+            </div>
+            <span className="shrink-0 text-[10px] font-medium text-slate-600">
+              In Progress
+            </span>
+          </div>
+        </Section>
 
-            <p className="mt-1">
-              Ahsanullah Institute of Technical &amp; Vocational Education
-              &amp; Training (AITVET), Dhaka
+        <Section title="Training & Languages">
+          <div className="space-y-1">
+            <p>
+              <span className="font-semibold text-slate-900">Training:</span>{" "}
+              Complete Web Development Course — Programming Hero
+            </p>
+            <p>
+              <span className="font-semibold text-slate-900">Languages:</span>{" "}
+              Bangla (Native), English (Intermediate)
             </p>
           </div>
-
-          <span className="shrink-0 text-[10.5px] font-medium">
-             In Progress
-          </span>
-        </div>
-      </Section>
-
-      {/* Certification & Languages */}
-      <Section title="Certification & Additional Information">
-        <div className="space-y-1.5">
-          <p>
-            <span className="font-semibold text-slate-900">
-              Certification:
-            </span>{" "}
-            Complete Web Development Course — Programming Hero
-          </p>
-
-          <p>
-            <span className="font-semibold text-slate-900">
-              Languages:
-            </span>{" "}
-            Bangla (Native), English (Intermediate)
-          </p>
-        </div>
-      </Section>
+        </Section>
+      </div>
     </main>
   );
 };
