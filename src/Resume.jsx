@@ -1,6 +1,6 @@
-
 import React from "react";
 
+// Profile information
 const profile = {
   name: "Mehedi Robi",
   role: "MERN Stack Developer",
@@ -10,14 +10,15 @@ const profile = {
   links: [
     ["Portfolio", "https://mehedirobi-portfolio.netlify.app/"],
     ["GitHub", "https://github.com/mehedirobi"],
-    ["LinkedIn", "https://www.linkedin.com/in/mehedirobii/"],
+    ["LinkedIn", "https://www.linkedin.com/in/mehedirobi/"],
   ],
 };
 
-// Add your verified certificate URL when available.
-// No certificate URL was included in the supplied code.
-const certificateUrl = "https://drive.google.com/file/d/1ycYUNKL_90HHyelDT5o1Ts3Q7LIHFquP/view?usp=sharing";
+// Certificate URL
+const certificateUrl =
+  "https://drive.google.com/file/d/1ycYUNKL_90HHyelDT5o1Ts3Q7LIHFquP/view?usp=sharing";
 
+// Skills, Projects, Education, and Activities
 const skills = [
   {
     category: "Languages",
@@ -52,10 +53,11 @@ const skills = [
   {
     category: "Soft Skills",
     items:
-      "Problem-Solving, Communication, Team Collaboration, Time Management, Continuous Learning",
+      "Problem-Solving, Communication, Time Management, Continuous Learning",
   },
 ];
 
+// Projects
 const projects = [
   {
     name: "Khelaro",
@@ -104,6 +106,7 @@ const projects = [
   },
 ];
 
+// Education
 const education = {
   degree: "Diploma in Computer Science & Technology (CST)",
   institution:
@@ -112,6 +115,7 @@ const education = {
   duration: "2023 – Present",
 };
 
+// Activities
 const activities = [
   "Continuously learning modern web technologies through self-directed projects.",
   "Regularly solving programming problems and building full-stack applications.",
@@ -169,6 +173,7 @@ const Project = ({ project }) => (
   </article>
 );
 
+// Main Resume Component
 const Resume = () => {
   return (
     <>
@@ -244,7 +249,7 @@ const Resume = () => {
         }
 
         .resume-divider {
-          color: #64748b;
+          color: black;
           font-weight: 500;
         }
 
@@ -264,7 +269,7 @@ const Resume = () => {
         .section-title {
           margin: 0 0 6px;
           padding-bottom: 4px;
-          border-bottom: 2px solid #64748b;
+          border-bottom: 2px solid #555555;
           color: #111827;
           font-size: 10.5pt;
           font-weight: 700;
@@ -486,7 +491,7 @@ const Resume = () => {
 
           a,
           .resume-link {
-            color: #1769aa !important;
+            color: #1769aa;
             text-decoration: none !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
@@ -537,16 +542,17 @@ const Resume = () => {
 
           <div className="resume-contact">
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            <span className="resume-divider" aria-hidden="true">|</span>
+            <span className="resume-divider" aria-hidden="true">
+              |
+            </span>
             <a href={`tel:${profile.phone}`}>{profile.phone}</a>
-            <span className="resume-divider" aria-hidden="true">|</span>
+            <span className="resume-divider" aria-hidden="true">
+              |
+            </span>
             <span>{profile.location}</span>
           </div>
 
-          <nav
-            aria-label="Professional profiles"
-            className="resume-profiles"
-          >
+          <nav aria-label="Professional profiles" className="resume-profiles">
             {profile.links.map(([label, url], index) => (
               <React.Fragment key={label}>
                 {index > 0 && (
@@ -561,19 +567,22 @@ const Resume = () => {
         </header>
 
         <div className="resume-content">
+          {/* Career Objective */}
           <Section title="Career Objective">
             <p className="objective-text">
-              MERN Stack Developer and Diploma student in Computer Science
-              &amp; Technology with hands-on experience building responsive,
-              full-stack web applications using MongoDB, Express.js, React.js,
-              and Node.js. Skilled in reusable React components, RESTful API
-              integration, authentication, protected routes, and
-              database-driven CRUD operations. Focused on clean, maintainable
-              code, responsive UI development, and building reliable,
-              user-friendly web applications.
+              Motivated MERN Stack Developer with hands-on experience building
+              responsive, full-stack web applications using MongoDB, Express.js,
+              React.js, and Node.js. Skilled in developing reusable components,
+              RESTful APIs, authentication systems, and database-driven
+              applications. Committed to writing clean, maintainable code,
+              improving application performance, and delivering scalable,
+              user-friendly solutions. Eager to contribute technical skills,
+              solve real-world problems, and grow as a software development
+              professional.
             </p>
           </Section>
 
+          {/* Skills */}
           <Section title="Skills">
             <div className="skills-list">
               {skills.map(({ category, items }) => (
@@ -584,6 +593,7 @@ const Resume = () => {
             </div>
           </Section>
 
+          {/* Projects */}
           <Section title="Projects">
             <div className="projects-list">
               {projects.map((project) => (
@@ -592,6 +602,7 @@ const Resume = () => {
             </div>
           </Section>
 
+          {/* Education */}
           <Section title="Education">
             <div className="education-heading">
               <div>
@@ -601,12 +612,11 @@ const Resume = () => {
                 </p>
               </div>
 
-              <span className="education-duration">
-                {education.duration}
-              </span>
+              <span className="education-duration">{education.duration}</span>
             </div>
           </Section>
 
+          {/* Certifications and Achievements */}
           <Section title="Certifications and Achievements">
             <div className="compact-info">
               <p>
@@ -622,6 +632,7 @@ const Resume = () => {
             </div>
           </Section>
 
+          {/* Extra-Curricular Activities */}
           <Section title="Extra-Curricular Activities">
             <ul className="activity-list">
               {activities.map((activity) => (
@@ -630,6 +641,7 @@ const Resume = () => {
             </ul>
           </Section>
 
+          {/* Languages */}
           <Section title="Languages">
             <div className="compact-info">
               <p>
