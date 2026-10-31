@@ -14,24 +14,45 @@ const profile = {
   ],
 };
 
+// Add your verified certificate URL when available.
+// No certificate URL was included in the supplied code.
+const certificateUrl = "https://drive.google.com/file/d/1ycYUNKL_90HHyelDT5o1Ts3Q7LIHFquP/view?usp=sharing";
+
 const skills = [
+  {
+    category: "Languages",
+    items: "JavaScript (ES6+), HTML5, CSS3",
+  },
   {
     category: "Frontend",
     items:
-      "HTML5, CSS3, JavaScript (ES6+), React.js, React Router, Tailwind CSS",
+      "React.js, React Router, Tailwind CSS, Responsive Design, Reusable Components",
   },
   {
     category: "Backend",
-    items: "Node.js, Express.js, RESTful API Development",
+    items: "Node.js, Express.js, RESTful API Development, CRUD Operations",
   },
   {
-    category: "Database & Authentication",
-    items: "MongoDB, Firebase Authentication, Protected Routes",
+    category: "Databases",
+    items: "MongoDB",
   },
   {
-    category: "Tools & Concepts",
+    category: "Authentication",
     items:
-      "Git, GitHub, CRUD Operations, API Integration, Responsive Design",
+      "Firebase Authentication, Protected Routes, User Authentication & Authorization",
+  },
+  {
+    category: "Integrations",
+    items: "REST API Integration",
+  },
+  {
+    category: "Tools",
+    items: "Git, GitHub, VS Code",
+  },
+  {
+    category: "Soft Skills",
+    items:
+      "Problem-Solving, Communication, Team Collaboration, Time Management, Continuous Learning",
   },
 ];
 
@@ -46,13 +67,14 @@ const projects = [
       ["Server", "https://github.com/mehedirobi/khelaro-server"],
     ],
     points: [
-      "Developed a full-stack turf booking platform featuring turf discovery, date and time selection, and booking management.",
-      "Integrated customer and turf-owner workflows with RESTful APIs and backend data operations.",
+      "Developed a full-stack platform for discovering sports turfs and exploring available booking options.",
+      "Implemented date and time-slot selection with booking management for customers and turf owners.",
+      "Built RESTful API integrations and role-based workflows for customer and owner dashboards.",
     ],
   },
   {
     name: "UrbanFix",
-    description: "Civic Issue Reporting Platform",
+    description: "Civic Infrastructure Issue Reporting Platform",
     tech: "React.js, Tailwind CSS, Node.js, Express.js, Firebase, MongoDB",
     live: "https://urbanfix-project-01.netlify.app/",
     repositories: [
@@ -60,13 +82,14 @@ const projects = [
       ["Server", "https://github.com/mehedirobi/urban-fix-server"],
     ],
     points: [
-      "Built a full-stack platform for reporting, tracking, and managing civic infrastructure issues.",
-      "Integrated Firebase Authentication, protected routes, RESTful APIs, and MongoDB data operations.",
+      "Built a full-stack platform for citizens to report, track, and manage civic infrastructure issues.",
+      "Integrated Firebase Authentication and protected routes for authenticated user access.",
+      "Developed RESTful APIs and MongoDB-backed workflows for issue management and status tracking.",
     ],
   },
   {
     name: "PawMart",
-    description: "Pet Adoption & Supply Platform",
+    description: "Pet Adoption & Supply Marketplace",
     tech: "React.js, Tailwind CSS, Node.js, Express.js, MongoDB, Firebase",
     live: "https://pawmart-project-01.netlify.app/",
     repositories: [
@@ -74,48 +97,55 @@ const projects = [
       ["Server", "https://github.com/mehedirobi/pawmart-project-server"],
     ],
     points: [
-      "Developed a responsive platform for pet adoption and pet-supply shopping with category-based browsing and filtering.",
-      "Implemented email/password and Google authentication, listing CRUD operations, adoption workflows, and product ordering.",
-      "Built listing and order dashboards, PDF order reports, and REST API integrations.",
+      "Developed a responsive marketplace for pet adoption and pet-supply shopping with browsing and filtering.",
+      "Implemented email/password and Google authentication, listing CRUD, adoption workflows, and product ordering.",
+      "Built listing and order dashboards with PDF reports and REST API integrations.",
     ],
   },
 ];
 
-const Section = ({ title, children }) => (
-  <section className="resume-section min-w-0">
-    <h2 className="mb-1.5 border-b border-slate-300 pb-1 text-[11px] font-bold uppercase tracking-[0.09em] text-slate-900">
-      {title}
-    </h2>
+const education = {
+  degree: "Diploma in Computer Science & Technology (CST)",
+  institution:
+    "Ahsanullah Institute of Technical & Vocational Education & Training (AITVET)",
+  location: "Dhaka, Bangladesh",
+  duration: "2023 – Present",
+};
+
+const activities = [
+  "Continuously learning modern web technologies through self-directed projects.",
+  "Regularly solving programming problems and building full-stack applications.",
+];
+
+const Section = ({ title, children, className = "" }) => (
+  <section className={`resume-section ${className}`}>
+    <h2 className="section-title">{title}</h2>
     {children}
   </section>
 );
 
-const ExternalLink = ({ href, children }) => (
+const ExternalLink = ({ href, children, className = "" }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="font-medium text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-slate-950 print:text-slate-800 print:no-underline"
+    className={`resume-link ${className}`}
   >
     {children}
   </a>
 );
 
 const Project = ({ project }) => (
-  <article className="project-item min-w-0 break-inside-avoid">
-    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-3 print:flex-row print:items-start print:justify-between print:gap-3">
-      <div className="min-w-0">
-        <h3 className="text-[12px] font-bold text-slate-950">
-          {project.name}
-        </h3>
-        <p className="text-[10.5px] text-slate-600">
-          {project.description}
-        </p>
+  <article className="project-item">
+    <div className="project-heading">
+      <div className="project-info">
+        <h3>{project.name}</h3>
+        <p className="project-description">{project.description}</p>
       </div>
 
       <nav
         aria-label={`${project.name} project links`}
-        className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[10px] sm:justify-end print:shrink-0 print:justify-end"
+        className="project-links"
       >
         <ExternalLink href={project.live}>Live Demo</ExternalLink>
 
@@ -127,12 +157,11 @@ const Project = ({ project }) => (
       </nav>
     </div>
 
-    <p className="mt-1 text-[10.5px] leading-[1.4] text-slate-600">
-      <span className="font-semibold text-slate-800">Tech Stack:</span>{" "}
-      {project.tech}
+    <p className="project-tech">
+      <strong>Tech Stack:</strong> {project.tech}
     </p>
 
-    <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[10.5px] leading-[1.4] text-slate-800">
+    <ul className="project-points">
       {project.points.map((point) => (
         <li key={point}>{point}</li>
       ))}
@@ -142,112 +171,477 @@ const Project = ({ project }) => (
 
 const Resume = () => {
   return (
-    <main className="resume-page mx-auto w-full max-w-[210mm] bg-white px-5 py-6 font-sans text-[11px] leading-[1.45] text-slate-800 sm:px-9 sm:py-8 print:w-full print:max-w-none print:px-0 print:py-0">
-      <header className="border-b border-slate-300 pb-3 text-center">
-        <h1 className="text-[28px] font-bold leading-tight tracking-tight text-slate-950 sm:text-[30px]">
-          {profile.name}
-        </h1>
+    <>
+      <style>{`
+        @page {
+          size: A4;
+          margin: 8mm;
+        }
 
-        <p className="mt-1 text-[13px] font-semibold tracking-wide text-slate-700">
-          {profile.role}
-        </p>
+        * {
+          box-sizing: border-box;
+        }
 
-        <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[10px]">
-          <a
-            className="break-all hover:underline"
-            href={`mailto:${profile.email}`}
+        .resume-page {
+          width: 100%;
+          max-width: 210mm;
+          min-height: 297mm;
+          margin: 0 auto;
+          padding: 10mm;
+          background: #ffffff;
+          color: #1f2937;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 9pt;
+          font-weight: 500;
+          line-height: 1.34;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .resume-header {
+          text-align: center;
+          padding-bottom: 9px;
+          border-bottom: 2px solid #475569;
+        }
+
+        .resume-name {
+          margin: 0;
+          color: #111827;
+          font-size: 27pt;
+          font-weight: 800;
+          line-height: 1.08;
+          letter-spacing: -0.7px;
+        }
+
+        .resume-role {
+          margin: 5px 0 0;
+          color: #1f2937;
+          font-size: 12pt;
+          font-weight: 700;
+          line-height: 1.25;
+        }
+
+        .resume-contact,
+        .resume-profiles {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 4px 9px;
+          margin-top: 8px;
+          font-size: 9pt;
+          font-weight: 600;
+          line-height: 1.4;
+        }
+
+        .resume-profiles {
+          margin-top: 5px;
+        }
+
+        .resume-contact a {
+          color: #1f2937;
+          text-decoration: none;
+        }
+
+        .resume-divider {
+          color: #64748b;
+          font-weight: 500;
+        }
+
+        .resume-content {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-top: 10px;
+        }
+
+        .resume-section {
+          min-width: 0;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .section-title {
+          margin: 0 0 6px;
+          padding-bottom: 4px;
+          border-bottom: 2px solid #64748b;
+          color: #111827;
+          font-size: 10.5pt;
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: 0.65px;
+          text-transform: uppercase;
+        }
+
+        .objective-text {
+          margin: 0;
+          color: #263445;
+          font-size: 9pt;
+          font-weight: 500;
+          line-height: 1.42;
+          text-align: left;
+        }
+
+        .skills-list {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+
+        .skill-row {
+          margin: 0;
+          color: #263445;
+          font-size: 8.9pt;
+          font-weight: 500;
+          line-height: 1.34;
+        }
+
+        .skill-row strong {
+          color: #111827;
+          font-weight: 700;
+        }
+
+        .projects-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .project-item {
+          min-width: 0;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .project-heading {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 8px;
+        }
+
+        .project-info {
+          min-width: 0;
+        }
+
+        .project-info h3 {
+          margin: 0;
+          color: #111827;
+          font-size: 10pt;
+          font-weight: 700;
+          line-height: 1.25;
+        }
+
+        .project-description {
+          margin: 2px 0 0;
+          color: #374151;
+          font-size: 8.7pt;
+          font-weight: 500;
+          line-height: 1.25;
+        }
+
+        .project-links {
+          display: flex;
+          flex-shrink: 0;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 3px 8px;
+          padding-top: 1px;
+          font-size: 8.3pt;
+        }
+
+        .resume-link {
+          color: #1769aa;
+          font-weight: 600;
+          text-decoration: none;
+        }
+
+        .resume-link:hover {
+          color: #0b4f86;
+          text-decoration: none;
+        }
+
+        .project-tech {
+          margin: 4px 0 3px;
+          color: #374151;
+          font-size: 8.6pt;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .project-tech strong {
+          color: #111827;
+          font-weight: 700;
+        }
+
+        .project-points {
+          margin: 2px 0 0;
+          padding-left: 17px;
+          color: #263445;
+          font-size: 8.7pt;
+          font-weight: 500;
+          line-height: 1.34;
+          list-style-type: disc;
+        }
+
+        .project-points li {
+          padding-left: 1px;
+          margin-bottom: 2px;
+        }
+
+        .education-heading {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .education-degree {
+          margin: 0;
+          color: #111827;
+          font-size: 9.3pt;
+          font-weight: 700;
+          line-height: 1.3;
+        }
+
+        .education-institution {
+          margin: 3px 0 0;
+          color: #374151;
+          font-size: 8.8pt;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .education-duration {
+          flex-shrink: 0;
+          color: #1f2937;
+          font-size: 8.8pt;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        .compact-info p {
+          margin: 0;
+          color: #263445;
+          font-size: 9pt;
+          font-weight: 500;
+          line-height: 1.35;
+        }
+
+        .compact-info strong {
+          color: #111827;
+          font-weight: 700;
+        }
+
+        .activity-list {
+          margin: 0;
+          padding-left: 17px;
+          color: #263445;
+          font-size: 8.9pt;
+          font-weight: 500;
+          line-height: 1.35;
+          list-style-type: disc;
+        }
+
+        .activity-list li {
+          margin-bottom: 2px;
+        }
+
+        @media screen {
+          .resume-page {
+            margin: 24px auto;
+            box-shadow: 0 4px 25px rgba(15, 23, 42, 0.10);
+          }
+        }
+
+        @media print {
+          html,
+          body {
+            width: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #ffffff !important;
+          }
+
+          .resume-page {
+            width: 100%;
+            max-width: none;
+            min-height: 0;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+            font-size: 9pt;
+          }
+
+          .resume-content {
+            gap: 7px;
+            margin-top: 8px;
+          }
+
+          .resume-section,
+          .project-item {
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
+
+          a,
+          .resume-link {
+            color: #1769aa !important;
+            text-decoration: none !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+          }
+
+          .section-title {
+            border-bottom-color: #64748b !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .resume-page {
+            min-height: auto;
+            padding: 24px 18px;
+            font-size: 9pt;
+          }
+
+          .resume-name {
+            font-size: 24pt;
+          }
+
+          .resume-contact,
+          .resume-profiles {
+            gap: 5px 7px;
+          }
+
+          .project-heading {
+            flex-direction: column;
+            gap: 4px;
+          }
+
+          .project-links {
+            justify-content: flex-start;
+          }
+
+          .education-heading {
+            flex-direction: column;
+            gap: 3px;
+          }
+        }
+      `}</style>
+
+      <main className="resume-page">
+        <header className="resume-header">
+          <h1 className="resume-name">{profile.name}</h1>
+
+          <p className="resume-role">{profile.role}</p>
+
+          <div className="resume-contact">
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            <span className="resume-divider" aria-hidden="true">|</span>
+            <a href={`tel:${profile.phone}`}>{profile.phone}</a>
+            <span className="resume-divider" aria-hidden="true">|</span>
+            <span>{profile.location}</span>
+          </div>
+
+          <nav
+            aria-label="Professional profiles"
+            className="resume-profiles"
           >
-            {profile.email}
-          </a>
-          <span className="text-slate-400" aria-hidden="true">•</span>
-          <a href={`tel:${profile.phone}`}>{profile.phone}</a>
-          <span className="text-slate-400" aria-hidden="true">•</span>
-          <span>{profile.location}</span>
-        </div>
-
-        <nav
-          aria-label="Professional profiles"
-          className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[10px]"
-        >
-          {profile.links.map(([label, url], index) => (
-            <React.Fragment key={label}>
-              {index > 0 && (
-                <span className="text-slate-400" aria-hidden="true">
-                  •
-                </span>
-              )}
-              <ExternalLink href={url}>{label}</ExternalLink>
-            </React.Fragment>
-          ))}
-        </nav>
-      </header>
-
-      <div className="mt-3.5 space-y-3.5 print:mt-3 print:space-y-3">
-        <Section title="Professional Summary">
-          <p>
-            MERN Stack Developer and Diploma student in Computer Science
-            &amp; Technology with hands-on experience building responsive,
-            full-stack web applications using MongoDB, Express.js, React.js,
-            and Node.js. Skilled in reusable React components, RESTful API
-            integration, authentication, protected routes, and database-driven
-            CRUD operations. Focused on clean, maintainable code, responsive
-            UI development, and building reliable, user-friendly web
-            applications.
-          </p>
-        </Section>
-
-        <Section title="Technical Skills">
-          <div className="space-y-1">
-            {skills.map(({ category, items }) => (
-              <p key={category}>
-                <span className="font-semibold text-slate-900">
-                  {category}:
-                </span>{" "}
-                {items}
-              </p>
+            {profile.links.map(([label, url], index) => (
+              <React.Fragment key={label}>
+                {index > 0 && (
+                  <span className="resume-divider" aria-hidden="true">
+                    |
+                  </span>
+                )}
+                <ExternalLink href={url}>{label}</ExternalLink>
+              </React.Fragment>
             ))}
-          </div>
-        </Section>
+          </nav>
+        </header>
 
-        <Section title="Projects">
-          <div className="space-y-3 print:space-y-2.5">
-            {projects.map((project) => (
-              <Project key={project.name} project={project} />
-            ))}
-          </div>
-        </Section>
+        <div className="resume-content">
+          <Section title="Career Objective">
+            <p className="objective-text">
+              MERN Stack Developer and Diploma student in Computer Science
+              &amp; Technology with hands-on experience building responsive,
+              full-stack web applications using MongoDB, Express.js, React.js,
+              and Node.js. Skilled in reusable React components, RESTful API
+              integration, authentication, protected routes, and
+              database-driven CRUD operations. Focused on clean, maintainable
+              code, responsive UI development, and building reliable,
+              user-friendly web applications.
+            </p>
+          </Section>
 
-        <Section title="Education">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <h3 className="font-semibold text-slate-900">
-                Diploma in Computer Science &amp; Technology (CST)
-              </h3>
-              <p className="mt-0.5 text-slate-700">
-                Ahsanullah Institute of Technical &amp; Vocational Education
-                &amp; Training (AITVET), Dhaka
+          <Section title="Skills">
+            <div className="skills-list">
+              {skills.map(({ category, items }) => (
+                <p className="skill-row" key={category}>
+                  <strong>{category}:</strong> {items}
+                </p>
+              ))}
+            </div>
+          </Section>
+
+          <Section title="Projects">
+            <div className="projects-list">
+              {projects.map((project) => (
+                <Project key={project.name} project={project} />
+              ))}
+            </div>
+          </Section>
+
+          <Section title="Education">
+            <div className="education-heading">
+              <div>
+                <h3 className="education-degree">{education.degree}</h3>
+                <p className="education-institution">
+                  {education.institution}, {education.location}
+                </p>
+              </div>
+
+              <span className="education-duration">
+                {education.duration}
+              </span>
+            </div>
+          </Section>
+
+          <Section title="Certifications and Achievements">
+            <div className="compact-info">
+              <p>
+                <strong>Complete Web Development Course — </strong>
+                {certificateUrl ? (
+                  <ExternalLink href={certificateUrl}>
+                    Programming Hero
+                  </ExternalLink>
+                ) : (
+                  <span>Programming Hero</span>
+                )}
               </p>
             </div>
-            <span className="shrink-0 text-[10px] font-medium text-slate-600">
-              In Progress
-            </span>
-          </div>
-        </Section>
+          </Section>
 
-        <Section title="Training & Languages">
-          <div className="space-y-1">
-            <p>
-              <span className="font-semibold text-slate-900">Training:</span>{" "}
-              Complete Web Development Course — Programming Hero
-            </p>
-            <p>
-              <span className="font-semibold text-slate-900">Languages:</span>{" "}
-              Bangla (Native), English (Intermediate)
-            </p>
-          </div>
-        </Section>
-      </div>
-    </main>
+          <Section title="Extra-Curricular Activities">
+            <ul className="activity-list">
+              {activities.map((activity) => (
+                <li key={activity}>{activity}</li>
+              ))}
+            </ul>
+          </Section>
+
+          <Section title="Languages">
+            <div className="compact-info">
+              <p>
+                <strong>Bangla:</strong> Native
+                <span className="resume-divider"> | </span>
+                <strong>English:</strong> Intermediate
+              </p>
+            </div>
+          </Section>
+        </div>
+      </main>
+    </>
   );
 };
 
