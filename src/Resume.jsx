@@ -269,7 +269,7 @@ const Resume = () => {
         .section-title {
           margin: 0 0 6px;
           padding-bottom: 4px;
-          border-bottom: 2px solid #555555;
+          border-bottom: 2px solid #808080;
           color: #111827;
           font-size: 10.5pt;
           font-weight: 700;
