@@ -14,11 +14,7 @@ const profile = {
   ],
 };
 
-// Certificate URL
-const certificateUrl =
-  "https://drive.google.com/file/d/1ycYUNKL_90HHyelDT5o1Ts3Q7LIHFquP/view?usp=sharing";
-
-// Skills, Projects, Education, and Activities
+// Technical skills
 const skills = [
   {
     category: "Languages",
@@ -26,8 +22,7 @@ const skills = [
   },
   {
     category: "Frontend",
-    items:
-      "React.js, React Router, Tailwind CSS, Responsive Design, Reusable Components",
+    items: "React.js, Tailwind CSS, Responsive Design, Reusable Components",
   },
   {
     category: "Backend",
@@ -39,8 +34,7 @@ const skills = [
   },
   {
     category: "Authentication",
-    items:
-      "Firebase Authentication, Protected Routes, User Authentication & Authorization",
+    items: "Firebase Authentication, User Authentication & Authorization",
   },
   {
     category: "Integrations",
@@ -115,12 +109,7 @@ const education = {
   duration: "2023 – Present",
 };
 
-// Activities
-const activities = [
-  "Continuously learning modern web technologies through self-directed projects.",
-  "Regularly solving programming problems and building full-stack applications.",
-];
-
+// Reusable section component
 const Section = ({ title, children, className = "" }) => (
   <section className={`resume-section ${className}`}>
     <h2 className="section-title">{title}</h2>
@@ -128,6 +117,7 @@ const Section = ({ title, children, className = "" }) => (
   </section>
 );
 
+// Reusable external link
 const ExternalLink = ({ href, children, className = "" }) => (
   <a
     href={href}
@@ -139,6 +129,7 @@ const ExternalLink = ({ href, children, className = "" }) => (
   </a>
 );
 
+// Project component
 const Project = ({ project }) => (
   <article className="project-item">
     <div className="project-heading">
@@ -180,7 +171,7 @@ const Resume = () => {
       <style>{`
         @page {
           size: A4;
-          margin: 8mm;
+          margin: 7mm;
         }
 
         * {
@@ -192,21 +183,22 @@ const Resume = () => {
           max-width: 210mm;
           min-height: 297mm;
           margin: 0 auto;
-          padding: 10mm;
+          padding: 8mm;
           background: #ffffff;
           color: #1f2937;
           font-family: Arial, Helvetica, sans-serif;
-          font-size: 9pt;
-          font-weight: 500;
-          line-height: 1.34;
+          font-size: 9.2pt;
+          font-weight: 400;
+          line-height: 1.38;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
 
+        /* Header */
         .resume-header {
           text-align: center;
-          padding-bottom: 9px;
-          border-bottom: 2px solid #475569;
+          padding-bottom: 10px;
+          border-bottom: 2px solid #334155;
         }
 
         .resume-name {
@@ -214,16 +206,16 @@ const Resume = () => {
           color: #111827;
           font-size: 27pt;
           font-weight: 800;
-          line-height: 1.08;
-          letter-spacing: -0.7px;
+          line-height: 1.12;
+          letter-spacing: -0.6px;
         }
 
         .resume-role {
           margin: 5px 0 0;
-          color: #1f2937;
+          color: #334155;
           font-size: 12pt;
           font-weight: 700;
-          line-height: 1.25;
+          line-height: 1.3;
         }
 
         .resume-contact,
@@ -232,10 +224,10 @@ const Resume = () => {
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          gap: 4px 9px;
+          gap: 4px 10px;
           margin-top: 8px;
           font-size: 9pt;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 1.4;
         }
 
@@ -249,44 +241,46 @@ const Resume = () => {
         }
 
         .resume-divider {
-          color: black;
-          font-weight: 500;
+          color: #94a3b8;
+          font-weight: 400;
         }
 
+        /* Main content */
         .resume-content {
           display: flex;
           flex-direction: column;
-          gap: 8px;
-          margin-top: 10px;
+          gap: 9px;
+          margin-top: 12px;
         }
 
         .resume-section {
           min-width: 0;
-          break-inside: avoid;
-          page-break-inside: avoid;
         }
 
+        /* Section headings */
         .section-title {
-          margin: 0 0 6px;
+          margin: 0 0 7px;
           padding-bottom: 4px;
-          border-bottom: 2px solid #808080;
+          border-bottom: 1.5px solid #64748b;
           color: #111827;
-          font-size: 10.5pt;
+          font-size: 11pt;
           font-weight: 700;
-          line-height: 1.2;
-          letter-spacing: 0.65px;
+          line-height: 1.25;
+          letter-spacing: 0.35px;
           text-transform: uppercase;
         }
 
+        /* Career objective */
         .objective-text {
           margin: 0;
           color: #263445;
-          font-size: 9pt;
-          font-weight: 500;
+          font-size: 9.2pt;
+          font-weight: 400;
           line-height: 1.42;
           text-align: left;
         }
 
+        /* Skills */
         .skills-list {
           display: flex;
           flex-direction: column;
@@ -296,9 +290,9 @@ const Resume = () => {
         .skill-row {
           margin: 0;
           color: #263445;
-          font-size: 8.9pt;
-          font-weight: 500;
-          line-height: 1.34;
+          font-size: 9.1pt;
+          font-weight: 400;
+          line-height: 1.38;
         }
 
         .skill-row strong {
@@ -306,10 +300,11 @@ const Resume = () => {
           font-weight: 700;
         }
 
+        /* Projects */
         .projects-list {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 9px;
         }
 
         .project-item {
@@ -322,7 +317,7 @@ const Resume = () => {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          gap: 8px;
+          gap: 10px;
         }
 
         .project-info {
@@ -332,17 +327,17 @@ const Resume = () => {
         .project-info h3 {
           margin: 0;
           color: #111827;
-          font-size: 10pt;
+          font-size: 10.5pt;
           font-weight: 700;
           line-height: 1.25;
         }
 
         .project-description {
           margin: 2px 0 0;
-          color: #374151;
-          font-size: 8.7pt;
+          color: #475569;
+          font-size: 9pt;
           font-weight: 500;
-          line-height: 1.25;
+          line-height: 1.3;
         }
 
         .project-links {
@@ -350,9 +345,10 @@ const Resume = () => {
           flex-shrink: 0;
           flex-wrap: wrap;
           justify-content: flex-end;
-          gap: 3px 8px;
-          padding-top: 1px;
-          font-size: 8.3pt;
+          gap: 4px 9px;
+          padding-top: 2px;
+          font-size: 8.7pt;
+          line-height: 1.35;
         }
 
         .resume-link {
@@ -363,15 +359,15 @@ const Resume = () => {
 
         .resume-link:hover {
           color: #0b4f86;
-          text-decoration: none;
+          text-decoration: underline;
         }
 
         .project-tech {
           margin: 4px 0 3px;
           color: #374151;
-          font-size: 8.6pt;
-          font-weight: 500;
-          line-height: 1.3;
+          font-size: 8.9pt;
+          font-weight: 400;
+          line-height: 1.35;
         }
 
         .project-tech strong {
@@ -380,57 +376,59 @@ const Resume = () => {
         }
 
         .project-points {
-          margin: 2px 0 0;
+          margin: 3px 0 0;
           padding-left: 17px;
           color: #263445;
-          font-size: 8.7pt;
-          font-weight: 500;
-          line-height: 1.34;
+          font-size: 9pt;
+          font-weight: 400;
+          line-height: 1.38;
           list-style-type: disc;
         }
 
         .project-points li {
-          padding-left: 1px;
+          padding-left: 2px;
           margin-bottom: 2px;
         }
 
+        /* Education */
         .education-heading {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          gap: 10px;
+          gap: 12px;
         }
 
         .education-degree {
           margin: 0;
           color: #111827;
-          font-size: 9.3pt;
+          font-size: 9.8pt;
           font-weight: 700;
-          line-height: 1.3;
+          line-height: 1.35;
         }
 
         .education-institution {
           margin: 3px 0 0;
-          color: #374151;
-          font-size: 8.8pt;
-          font-weight: 500;
-          line-height: 1.3;
+          color: #475569;
+          font-size: 9pt;
+          font-weight: 400;
+          line-height: 1.35;
         }
 
         .education-duration {
           flex-shrink: 0;
           color: #1f2937;
-          font-size: 8.8pt;
+          font-size: 9pt;
           font-weight: 700;
           white-space: nowrap;
         }
 
+        /* Languages */
         .compact-info p {
           margin: 0;
           color: #263445;
-          font-size: 9pt;
-          font-weight: 500;
-          line-height: 1.35;
+          font-size: 9.2pt;
+          font-weight: 400;
+          line-height: 1.4;
         }
 
         .compact-info strong {
@@ -438,20 +436,7 @@ const Resume = () => {
           font-weight: 700;
         }
 
-        .activity-list {
-          margin: 0;
-          padding-left: 17px;
-          color: #263445;
-          font-size: 8.9pt;
-          font-weight: 500;
-          line-height: 1.35;
-          list-style-type: disc;
-        }
-
-        .activity-list li {
-          margin-bottom: 2px;
-        }
-
+        /* Screen preview */
         @media screen {
           .resume-page {
             margin: 24px auto;
@@ -459,54 +444,72 @@ const Resume = () => {
           }
         }
 
-        @media print {
-          html,
-          body {
-            width: 100%;
-            margin: 0 !important;
-            padding: 0 !important;
-            background: #ffffff !important;
-          }
+        /* Print / PDF */
+@media print {
+  html,
+  body {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
 
-          .resume-page {
-            width: 100%;
-            max-width: none;
-            min-height: 0;
-            margin: 0;
-            padding: 0;
-            box-shadow: none;
-            font-size: 9pt;
-          }
+  .resume-page {
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
 
-          .resume-content {
-            gap: 7px;
-            margin-top: 8px;
-          }
+  .resume-content {
+    gap: 8px;
+    margin-top: 10px;
+  }
 
-          .resume-section,
-          .project-item {
-            break-inside: avoid;
-            page-break-inside: avoid;
-          }
+  .resume-section,
+  .project-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 
-          a,
-          .resume-link {
-            color: #1769aa;
-            text-decoration: none !important;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
+  /* Email and phone stay dark */
+  .resume-contact a {
+    color: #1f2937 !important;
+    text-decoration: none !important;
+  }
 
-          .section-title {
-            border-bottom-color: #64748b !important;
-          }
-        }
+  /* Portfolio, GitHub and LinkedIn stay blue */
+  .resume-profiles a {
+    color: #1769aa !important;
+    text-decoration: none !important;
+  }
 
+  /* Project links stay blue */
+  .project-links a {
+    color: #1769aa !important;
+    text-decoration: none !important;
+  }
+
+  .section-title {
+    color: #111827 !important;
+    border-bottom-color: #64748b !important;
+    font-weight: 700 !important;
+  }
+
+  a {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+        /* Mobile preview */
         @media (max-width: 600px) {
           .resume-page {
             min-height: auto;
             padding: 24px 18px;
-            font-size: 9pt;
+            font-size: 9.2pt;
           }
 
           .resume-name {
@@ -515,7 +518,7 @@ const Resume = () => {
 
           .resume-contact,
           .resume-profiles {
-            gap: 5px 7px;
+            gap: 5px 8px;
           }
 
           .project-heading {
@@ -567,7 +570,6 @@ const Resume = () => {
         </header>
 
         <div className="resume-content">
-          {/* Career Objective */}
           <Section title="Career Objective">
             <p className="objective-text">
               Motivated MERN Stack Developer with hands-on experience building
@@ -582,7 +584,6 @@ const Resume = () => {
             </p>
           </Section>
 
-          {/* Skills */}
           <Section title="Skills">
             <div className="skills-list">
               {skills.map(({ category, items }) => (
@@ -593,7 +594,6 @@ const Resume = () => {
             </div>
           </Section>
 
-          {/* Projects */}
           <Section title="Projects">
             <div className="projects-list">
               {projects.map((project) => (
@@ -602,7 +602,6 @@ const Resume = () => {
             </div>
           </Section>
 
-          {/* Education */}
           <Section title="Education">
             <div className="education-heading">
               <div>
@@ -616,32 +615,6 @@ const Resume = () => {
             </div>
           </Section>
 
-          {/* Certifications and Achievements */}
-          <Section title="Certifications and Achievements">
-            <div className="compact-info">
-              <p>
-                <strong>Complete Web Development Course — </strong>
-                {certificateUrl ? (
-                  <ExternalLink href={certificateUrl}>
-                    Programming Hero
-                  </ExternalLink>
-                ) : (
-                  <span>Programming Hero</span>
-                )}
-              </p>
-            </div>
-          </Section>
-
-          {/* Extra-Curricular Activities */}
-          <Section title="Extra-Curricular Activities">
-            <ul className="activity-list">
-              {activities.map((activity) => (
-                <li key={activity}>{activity}</li>
-              ))}
-            </ul>
-          </Section>
-
-          {/* Languages */}
           <Section title="Languages">
             <div className="compact-info">
               <p>
