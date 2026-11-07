@@ -19,7 +19,7 @@ const objective =
 
 const skills = [
   ["Programming Languages", "JavaScript (ES6+), HTML5, CSS3"],
-  ["Frontend Development", "React.js, Tailwind CSS, Responsive Web Design"],
+  ["Frontend Development", "React.js, Next.js (Basics), Tailwind CSS, Responsive Web Design"],
   ["Backend Development", "Node.js, Express.js, RESTful APIs"],
   ["Database & Authentication", "MongoDB, Firebase Authentication"],
   ["Tools & Platforms", "Git, GitHub, Netlify, Vercel, VS Code"],
@@ -29,7 +29,7 @@ const skills = [
   ],
 ];
 
-const TECH = "React.js, Tailwind CSS, Node.js, Express.js, MongoDB, Firebase";
+const TECH = "React.js, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, Firebase";
 
 const projects = [
   {
@@ -74,7 +74,7 @@ const education = {
   degree: "Diploma in Computer Science & Technology (CST)",
   institution:
     "Ahsanullah Institute of Technical & Vocational Education & Training (AITVET), Dhaka, Bangladesh",
-  date: "2026",
+  date: "Graduated 2026",
 };
 
 const languages = [
